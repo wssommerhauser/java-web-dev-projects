@@ -28,6 +28,31 @@ class MenuItem {
     public MenuItem(){
 
     }
+
+    public String getName(){
+        return itemName;
+    }
+    public void setName (String aName){
+        itemName = aName;
+    }
+    public String getDescription(){
+        return itemDescription;
+    }
+    public void setDescription (String aDesc){
+        itemDescription = aDesc;
+    }
+    public Double getPrice(){
+        return price;
+    }
+    public void setPrice (Double aPrice){
+        price = aPrice;
+    }
+    public Boolean getIsNew(){
+        return isNew;
+    }
+    public void setIsNew (Boolean aName){
+        isNew = aName;
+    }
     public MenuItem(String name, String description, Double price, ArrayList<String> category, Boolean isNew){
         this.itemName = name;
         this.itemDescription = description;
