@@ -6,7 +6,9 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
-
+        MenuItem item1 = new MenuItem("Pizza", "Layers of Foodstuff", 14.00, "Main Course", false);
+        Menu.AddMenuItem(item1);
+        System.out.println(getList());
     }
 }
 class Menu {
@@ -17,17 +19,26 @@ class Menu {
         //returns how many days since dateModified was last changed.
         return;
     }
+    public ArrayList<MenuItem> getList(){
+        return itemList;
+    }
+    public void AddMenuItem(MenuItem item){
+        itemList.add(item);
+
+    }
 }
 class MenuItem {
     private String itemName;
     private String itemDescription;
     private Double price;
-    private ArrayList<String> category = new ArrayList<>();
+    //private ArrayList<String> category = new ArrayList<>();
+    private String category;
     //private Date dateAdded = new Date();
     private Boolean isNew;
     public MenuItem(){
 
     }
+
 
     public String getName(){
         return itemName;
@@ -47,13 +58,16 @@ class MenuItem {
     public void setPrice (Double aPrice){
         price = aPrice;
     }
+    public void setCategory (String aCategory){
+        category = aCategory;
+    }
     public Boolean getIsNew(){
         return isNew;
     }
     public void setIsNew (Boolean aName){
         isNew = aName;
     }
-    public MenuItem(String name, String description, Double price, ArrayList<String> category, Boolean isNew){
+    public MenuItem(String name, String description, Double price, String category, Boolean isNew){
         this.itemName = name;
         this.itemDescription = description;
         this.price = price;
